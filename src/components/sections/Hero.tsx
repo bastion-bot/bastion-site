@@ -1,9 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { useCountUp } from '@/hooks/useCountUp'
 import { DiscordIcon } from '@/components/ui/Icons'
 
 const ROTATING_WORDS = ['raiders', 'spammers', 'nukers', 'phishers', 'bots']
@@ -28,7 +26,7 @@ function RotatingWord() {
 
   return (
     <span
-      className="text-bastion-red inline-block min-w-[220px] text-left"
+      className="text-bastion-red inline-block min-w-[120px] sm:min-w-[220px] text-left"
       style={{
         opacity: visible ? 1 : 0,
         transform: `translateY(${offset}px)`,
@@ -50,13 +48,11 @@ function StatItem({ value, label, border = true }: { value: string; label: strin
 }
 
 export default function Hero() {
-  const serverCount = useCountUp(847, 900)
-
   return (
     <section className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6 pb-32 pt-24">
       {/* Badge actif */}
       <div
-        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-bastion-red/25 bg-bastion-red/8 text-bastion-red text-[10px] tracking-[1.5px] uppercase mb-9"
+        className="inline-flex flex-wrap items-center justify-center gap-2 px-3.5 py-1.5 rounded-full border border-bastion-red/25 bg-bastion-red/8 text-bastion-red text-[10px] tracking-[1.5px] uppercase mb-9 text-center"
         style={{ animation: 'fadeUp 0.8s ease 0.2s both' }}
       >
         <span className="w-1.5 h-1.5 rounded-full bg-bastion-red" style={{ animation: 'blink 1.5s ease-in-out infinite' }} />
@@ -72,27 +68,26 @@ export default function Hero() {
             animation: 'glowPulse 4s ease-in-out infinite',
           }}
         />
-        <Image
+        <img
           src="/logo.png"
           alt="Bastion"
           width={88}
           height={88}
           className="relative z-10 object-contain drop-shadow-[0_0_22px_rgba(232,32,58,0.5)]"
           style={{ animation: 'float 6s ease-in-out infinite' }}
-          priority
         />
       </div>
 
       {/* Titre */}
       <h1
-        className="font-syne font-extrabold text-6xl lg:text-[82px] tracking-[-3px] leading-none mb-1"
+        className="font-syne font-extrabold text-[38px] sm:text-5xl lg:text-[82px] tracking-[-3px] leading-none mb-1"
         style={{ animation: 'fadeUp 0.8s ease 0.4s both' }}
       >
         Ton serveur dort.
       </h1>
 
       <div
-        className="font-syne font-extrabold text-6xl lg:text-[82px] tracking-[-3px] leading-none mb-7 flex items-center justify-center gap-3 flex-wrap"
+        className="font-syne font-extrabold text-[38px] sm:text-5xl lg:text-[82px] tracking-[-3px] leading-none mb-7 flex items-center justify-center gap-3 flex-wrap"
         style={{ animation: 'fadeUp 0.8s ease 0.5s both' }}
       >
         <span>Les</span>
@@ -110,14 +105,14 @@ export default function Hero() {
 
       {/* Boutons */}
       <div
-        className="flex items-center gap-3 mb-14"
+        className="flex flex-col sm:flex-row items-center gap-3 mb-14"
         style={{ animation: 'fadeUp 0.8s ease 0.7s both' }}
       >
-        <Link href="#" className="btn-red">
+        <Link href="https://discord.com/api/oauth2/authorize?client_id=1474138942294065377&permissions=1368477782150&scope=bot%20applications.commands" className="btn-red">
           <DiscordIcon />
           Ajouter à Discord — gratuit
         </Link>
-        <Link href="https://dashboard-bastion.yaiito.fr" className="btn-ghost">
+        <Link href="https://bastion.yaiito.fr" className="btn-ghost">
           Dashboard →
         </Link>
       </div>
@@ -127,14 +122,10 @@ export default function Hero() {
         className="flex items-stretch"
         style={{ animation: 'fadeUp 0.8s ease 0.85s both' }}
       >
-        <StatItem value={String(serverCount)} label="Serveurs protégés" />
         <StatItem value="6" label="Modules actifs" />
+        <StatItem value="5" label="Niveaux d'escalation" />
         <StatItem value="3" label="Langues" />
-        <StatItem
-          value="100%"
-          label="Temps réel"
-          border={false}
-        />
+        <StatItem value="100%" label="Temps réel" border={false} />
       </div>
 
       {/* Vague animée */}
