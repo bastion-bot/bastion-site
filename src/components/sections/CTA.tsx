@@ -69,7 +69,7 @@ export default function CTA() {
           </p>
 
           <div className="flex items-center justify-center gap-3 mb-10">
-            <Link href="#" className="btn-red">
+            <Link href="https://discord.com/api/oauth2/authorize?client_id=1474138942294065377&permissions=1368477782150&scope=bot%20applications.commands" className="btn-red">
               <DiscordIcon />
               Ajouter à Discord — gratuit
             </Link>

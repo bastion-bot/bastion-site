@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
@@ -29,7 +28,7 @@ export default function Navbar() {
     )}>
       <div className="container-site flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2.5 font-syne font-extrabold text-lg tracking-tight">
-          <Image
+          <img
             src="/logo.png"
             alt="Bastion"
             width={26}
@@ -56,7 +55,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="https://dashboard-bastion.yaiito.fr"
+            href="/app"
             className="text-white/55 hover:text-white border border-white/15 hover:border-white/30 rounded-md px-4 py-1.5 text-[11px] transition-all duration-200"
           >
             Dashboard

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const LINKS = [
   { href: 'https://github.com/Jonathan-p-z/Bastion', label: 'GitHub' },
-  { href: 'https://dashboard-bastion.yaiito.fr', label: 'Dashboard' },
+  { href: 'https://bastion.yaiito.fr', label: 'Dashboard' },
   { href: '/legal', label: 'Mentions légales' },
   { href: '/legal#cgu', label: 'CGU' },
   { href: '/legal#rgpd', label: 'RGPD' },
