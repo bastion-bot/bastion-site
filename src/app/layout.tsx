@@ -12,11 +12,19 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
+      <head>
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/logo.png" type="image/png" />
+      </head>
       <body>{children}</body>
     </html>
   )
